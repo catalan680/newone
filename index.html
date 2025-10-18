@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MentorTown — Landing</title>
+  <style>
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    
+    header {
+      background: #fff;
+      padding: 20px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav .logo {
+      font-size: 1.75rem;
+      font-weight: bold;
+    }
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .nav ul li {
+      padding: 5px;
+    }
+    .nav ul li a:hover {
+      color: #007BFF;
+    }
+    .btn-primary {
+      padding: 10px 24px;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .btn-primary:hover {
+      background: #0056b3;
+    }
+
+    
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 0;
+    }
+    .hero .hero-text {
+      flex: 1;
+      padding-right: 40px;
+    }
+    .hero .hero-text h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .hero .hero-text p {
+      font-size: 1.25rem;
+      margin-bottom: 32px;
+      color: #555;
+    }
+    .hero .hero-image {
+      flex: 1;
+      text-align: right;
+    }
+
+    
+    .mentors-logos {
+      text-align: center;
+      padding: 60px 0;
+    }
+    .mentors-logos p {
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+      color: #666;
+    }
+    .mentors-logos .logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .mentors-logos .logos img {
+      width: 100px;
+      height: auto;
+      filter: grayscale(20%);
+      transition: filter 0.3s ease;
+    }
+    .mentors-logos .logos img:hover {
+      filter: grayscale(0);
+    }
+
+    
+    .mission {
+      padding: 80px 0;
+      text-align: center;
+    }
+    .mission h2 {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+    }
+    .mission p {
+      font-size: 1.15rem;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      color: #555;
+    }
+
+    
+    .how-it-works {
+      background: #f0f8ff;
+      padding: 80px 0;
+    }
+    .how-it-works h2 {
+      text-align: center;
+      margin-bottom: 48px;
+      font-size: 2.25rem;
+      color: #333;
+    }
+    .steps {
+      display: flex;
+      gap: 40px;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .step {
+      flex: 1 1 250px;
+      text-align: center;
+      padding: 20px;
+    }
+    .step img {
+      max-width: 100px;
+      margin-bottom: 20px;
+    }
+    .step h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+    .step p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    
+    .testimonials {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .testimonials h2 {
+      text-align: center;
+      margin-bottom: 48px;
+      font-size: 2.25rem;
+      color: #333;
+    }
+    .test-cards {
+      display: flex;
+      gap: 30px;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .test-card {
+      background: #fafafa;
+      padding: 32px;
+      border-radius: 8px;
+      flex: 1 1 300px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .test-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .test-card p {
+      margin-bottom: 24px;
+      font-size: 1rem;
+      color: #444;
+      text-align: center;
+      flex-grow: 1;
+    }
+    .test-card .author {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .test-card .role {
+      font-size: 0.95rem;
+      color: #777;
+    }
+
+    
+    .features {
+      padding: 80px 0;
+      text-align: center;
+    }
+    .features h2 {
+      margin-bottom: 48px;
+      font-size: 2.25rem;
+    }
+    .feature-list {
+      display: flex;
+      gap: 40px;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .feature {
+      flex: 1 1 260px;
+      padding: 20px;
+    }
+    .feature img {
+      max-width: 80px;
+      margin-bottom: 20px;
+    }
+    .feature h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+    .feature p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    
+    footer {
+      background: #222;
+      color: #ddd;
+      padding: 60px 0 40px;
+    }
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .footer-col {
+      flex: 1 1 200px;
+    }
+    .footer-col h4 {
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 12px;
+      color: #ddd;
+    }
+    .footer-col ul li a {
+      color: #ddd;
+    }
+    .footer-col ul li a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    
+    @media (max-width: 992px) {
+      .hero {
+        flex-direction: column;
+      }
+      .hero .hero-text {
+        padding-right: 0;
+        margin-bottom: 40px;
+      }
+      .steps {
+        flex-direction: column;
+      }
+      .test-cards {
+        flex-direction: column;
+      }
+      .feature-list {
+        flex-direction: column;
+      }
+      .mentors-logos .logos {
+        gap: 20px;
+      }
+    }
+    @media (max-width: 576px) {
+      .nav ul {
+        gap: 12px;
+      }
+      .btn-primary {
+        padding: 8px 16px;
+      }
+      .hero .hero-text h1 {
+        font-size: 2.25rem;
+      }
+      .hero .hero-text p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">MentorTown</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#how">How it Works</a></li>
+        <li><a href="#login">Log In</a></li>
+        <li><a href="#join" class="btn-primary">Join MentorTown</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero container" id="home">
+    <div class="hero-text">
+      <h1>Reach your Professional Development Goals faster with help from mentors around the world</h1>
+      <p>Connect with vetted mentors, get guidance, and accelerate your growth.</p>
+      <button class="btn-primary">Get Started</button>
+    </div>
+    <div class="hero-image">
+      <img src="hero.png" alt="Mentorship Illustration" />
+    </div>
+  </section>
+
+  <section class="mentors-logos">
+    <div class="container">
+      <p>We work with mentors across all industries</p>
+      <div class="logos">
+        <marquee></marquee>
+        <img src="bbc.png" alt="BBC Logo" />
+        <img src="samsung.png" alt="Samsung Logo" />
+        <img src="vogue.png" alt="Vogue Logo" />
+        <img src="google.png" alt="Google Logo" />
+      </div>
+    </div>
+  </section>
+
+  <section class="mission" id="team">
+    <div class="container">
+      <h2>Our Mission</h2>
+      <p>We Connect Students and Young Professionals with Highly Skilled and Experienced Mentors. Join us as we bridge the gap between young learners and mentors in their respective fields.</p>
+      <img src="mission.jpeg" width="1500" height="300" alt="Mission Illustration" />
+    </div>
+  </section>
+
+  <section class="how-it-works" id="how">
+    <div class="container">
+      <h2>How it Works</h2>
+      <div class="steps">
+        <div class="step">
+          <img src="step_1.png" alt="Step 1" />
+          <h3>Step 1: Create A Profile</h3>
+          <p>Provide all necessary data about you, your dreams and aspirations.</p>
+        </div>
+        <div class="step">
+          <img src="step_2.png" alt="Step 2" />
+          <h3>Step 2: Get Verified</h3>
+          <p>Information provided is carefully vetted by the admin.</p>
+        </div>
+        <div class="step">
+          <img src="step_3.png" alt="Step 3" />
+          <h3>Step 3: Get Connected</h3>
+          <p>The system connects verified students with professionals in their fields.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2>Testimonials</h2>
+      <div class="test-cards">
+        <div class="test-card">
+          <img src="profile-testimonial-1.png" alt="Person 1" />
+          <p>Mentortown has helped me grow in confidence, ever since I joined Mentortown I have been able to communicate with people, I used to be scared of criticism …</p>
+          <div class="author">Saile Thomas</div>
+          <div class="role">Student</div>
+        </div>
+        <div class="test-card">
+          <img src="profile-testimonial-2.png" alt="Person 2" />
+          <p>In February 2022, I was introduced to this platform by a friend, I was matched with a Mentor …</p>
+          <div class="author">George Freigh</div>
+          <div class="role">Young Professional</div>
+        </div>
+        <div class="test-card">
+          <img src="profile-testimonial-3.png" alt="Person 3" />
+          <p>Mentortown enables us to achieve our mission to support the career journey of students …</p>
+          <div class="author">Yeng Smith</div>
+          <div class="role">Mentor</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2>What Makes Us Different</h2>
+      <div class="feature-list">
+        <div class="feature">
+          <img src="box.png" alt="Feature 1" />
+          <h3>Intelligent Mentor Matching</h3>
+          <p>The system matches experts and learners automatically with AI to enable an inclusive environment for sharing knowledge.</p>
+        </div>
+        <div class="feature">
+          <img src="cloud.png" alt="Feature 2" />
+          <h3>Self Contained Workflow</h3>
+          <p>With features like calendar, reminders, it's easier to keep tabs of all meetings.</p>
+        </div>
+        <div class="feature">
+          <img src="monitor.png" alt="Feature 3" />
+          <h3>Accessible on all devices</h3>
+          <p>Our mentoring platform is mobile responsive and works across all devices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-col">
+        <h4>MentorTown</h4>
+        <p>© 2022 MentorTown</p>
+      </div>
+      <div class="footer-col">
+        <h4>Home</h4>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>support@mentortown.com</li>
+          <li>+91‑45689430</li>
+          <li>mentortown.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2022 MentorTown — All rights reserved
+    </div>
+  </footer>
+
+</body>
+</html>
